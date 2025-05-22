@@ -436,6 +436,34 @@ table {
     font-size: clamp(0.9rem, 1.3vw, 1.1rem);
 }
 
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: rgba(4, 207, 170, 0.1);
+}
+
+.table__row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table__row:last-child {
+    border-bottom: none;
+}
+
+.table__cell {
+    padding: 1rem;
+    color: var(--main-text-color);
+    vertical-align: top;
+}
+
+.table__cell--header {
+    background-color: var(--main-color);
+    font-weight: 600;
+}
+
 /* End Main */
 
 
