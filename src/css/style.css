@@ -3,7 +3,6 @@
     --main-color: #FF2400;
     --main-text-color: #ffff;
     --subtitle-color: #04CFAA;
-;
 }
 
 * {
@@ -14,6 +13,7 @@
     font-family: 'Arial', sans-serif;
     text-decoration: none;
 }
+
 * li{
     list-style: none;
 }
@@ -30,22 +30,26 @@ body {
 
 }
 
+.cta-wrapper {
+    text-align: center;
+}
+
 .cta-btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    margin: 2rem auto 0;
     padding: 0.5rem 1.2rem;
-    margin-top: 2rem;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease;
-    width: 50%;
+    width: auto;
+    max-width: 100%;
     text-align: center;
     background-color: var(--main-color);
     color: var(--main-text-color);
     cursor: pointer;
+    border: none;
 }
 
 .header {
@@ -108,7 +112,10 @@ body {
 .desktop-menu {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 .header-item {
     display: flex;
     align-items: center;
@@ -121,20 +128,17 @@ body {
 
 }
 
-.header-item li {
-    list-style: none;
-}
-
-.header-item a {
+.desktop-menu a,
+.mobile-menu a {
+    color: var(--main-text-color) !important;
     text-decoration: none;
-    color: var(--main-text-color);
     transition: color 0.3s ease;
 }
 
-.header-item a:hover {
-    color: var(--main-color);
+.desktop-menu a:hover,
+.mobile-menu a:active {
+    color: var(--main-color) !important;
 }
-
 
 .burger-menu {
     display: none;
@@ -271,8 +275,9 @@ table {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index: 10;
+    position: relative;
 }
 
 .main-section::before {
@@ -447,6 +452,9 @@ table {
     border-collapse: collapse;
     margin: 1.5rem 0;
     background-color: rgba(4, 207, 170, 0.1);
+    table-layout: fixed;
+    overflow-x: auto;
+    display: block;
 }
 
 .table__row {
@@ -461,6 +469,7 @@ table {
     padding: 1rem;
     color: var(--main-text-color);
     vertical-align: top;
+    word-wrap: break-word;
 }
 
 .table__cell--header {
@@ -611,6 +620,21 @@ footer {
     .cta-btn{
         width: 96%;
     }
+    .main-section {
+        background-size: cover;
+        background-attachment: scroll;
+    }
+    .table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .table__cell {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
 }
 
 
@@ -652,8 +676,9 @@ footer {
 
 
 @media (max-width: 480px) {
-    .table__cell{
-            font-size: 10px;
+    .table__cell {
+        padding: 0.6rem;
+        font-size: 0.8rem;
     }
     
     .main {
